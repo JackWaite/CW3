@@ -72,6 +72,5 @@ class BankTransactions:
 
 
 if __name__ == 'main':
-    # url = "https://api.npoint.io/094d3a7a0d9569218a14"
     BankTransactions().main()
 
