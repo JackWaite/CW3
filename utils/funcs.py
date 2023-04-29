@@ -60,7 +60,7 @@ def result_output(last_five_operations):
     for w in last_five_operations:
         if 'перевод' in w['description'].lower():
             print(
-                f"{w['date']} {w['description']}\n{w['from']} -> {w['to']}\n{w['operationAmount']['amount']}"
+                f"{w['date']} {w['description']}\n{w['from']}  -> {w['to']}\n{w['operationAmount']['amount']}"
                 f" {w['operationAmount']['currency']['name']} \n ")
         else:
             print(
