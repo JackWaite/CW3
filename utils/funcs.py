@@ -35,7 +35,7 @@ def last_operations():
 def hiding_card(last_five_operations):
     """Masking an account and a card"""
     for k in last_five_operations:
-        if 'transfer' in k['description'].lower():
+        if 'перевод' in k['description'].lower():
             if 'account' in k['from'].lower():
                 k['from'] = k['from'][:(len(k['from']) - 4) - 10] + '*' * 6 + k['from'][(len(k['from']) - 4):]
             k['from'] = k['from'][:(len(k['from']) - 4) - 6] + '*' * 6 + k['from'][(len(
@@ -58,20 +58,17 @@ def result_output(last_five_operations):
     """Output function"""
     date_new(last_five_operations)
     for w in last_five_operations:
-        if 'transfer' in w['description'].lower():
+        if 'перевод' in w['description'].lower():
             print(
-                f"{w['date']} {w['description']}\n{w['from']} ->"
-                f" {w['to']}\n{w['operationAmount']['amount']} {w['operationAmount']['currency']['name']} \n ")
+                f"{w['date']} {w['description']}\n{w['from']} -> {w['to']}\n{w['operationAmount']['amount']}"
+                f" {w['operationAmount']['currency']['name']} \n ")
         else:
             print(
                 f"{w['date']} {w['description']}\n{w['to']}\n{w['operationAmount']['amount']}"
                 f" {w['operationAmount']['currency']['name']} \n ")
+    return True
 
 
 def main():
     last_five_operations = last_operations()
     result_output(last_five_operations)
-
-
-if __name__ == '__main__':
-    main()
