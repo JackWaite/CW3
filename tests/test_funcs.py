@@ -53,5 +53,5 @@ def test_date_new():
 
 def test_result_output():
     """Test result_output"""
-    last_five_operations = funcs.last_operations()[:5]
+    last_five_operations = funcs.last_operations()
     assert funcs.result_output(last_five_operations) is True
