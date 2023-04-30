@@ -1,13 +1,14 @@
-import requests
+import json
 import datetime
 
-url = "https://api.npoint.io/094d3a7a0d9569218a14"
+file = 'operations.json'
 
 
 def get_data():
     """Converting a file from json"""
-    file = requests.get(url).json()
-    return file
+    with open(file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data
 
 
 def executed_operations():
